@@ -1,0 +1,20 @@
+<h1>在庫詳細</h1>
+
+  <% if @stock.image? %>
+    <%= image_tag @stock.image.url %>
+  <% else %>
+    <%= image_tag "No_image_1" %>
+  <% end %>
+  
+  
+  <h2>商品名：<span><%= @stock.name %></span></h2>
+  
+  <p>在庫数</p>
+  <%= form_with model: @stock,url:"/stocks/#{@stock.id}", local: :true do |f| %>
+    <%= f.number_field :num %>
+    <p>詳細</p>
+    <%= f.text_area :detail,size: "60x10" %><br>
+    <p>
+    <%= f.submit '更新' , class: "button_submit"%>
+<% end %>
+  

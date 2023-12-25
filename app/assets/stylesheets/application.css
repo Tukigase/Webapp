@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    text-align:center;
+    
+    background-color: lightblue;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+img{
+    width: 150px;
+    height: auto;
+    pointer-events: none;
+}
+
+h1{
+    color: whitesmoke;
+    background-color: rgb(82, 147, 245);
+}
+
+.imagebox{
+    width: 100px;
+    height: 100px;
+}
+/*追従ボタンのCSS*/
+.fixed_btn
+{
+  position: fixed;
+  bottom: 20px; /*追従ボタンのウィンドウ端の余白*/
+  right: 10px;/*追従ボタンの横の位置*/
+  font-size: 22px;
+}
+
+.round-corner-table{
+    border-collapse: separate;
+    border: solid 4px #404040; 
+    border-radius: 20px; 
+    text-align: center;
+  }
+  .round-corner-table tr:first-child th:first-child{ /* 最初のtr(行) かつ、最初の td(列) つまり、1行目1列目に適用*/
+    border-radius: 20px 0 0 0; /* 左上から指定してゆく */
+  }
+  .round-corner-table tr:first-child th:last-child{ /* 最初のtr(行) かつ、最後の td(列) つまり、1行目3列目に適用*/
+    border-radius: 0 20px 0 0;
+  }
+  .round-corner-table tr:last-child td:first-child{ /* 最後のtr(行) かつ、最初の td(列) つまり、3行目1列目に適用*/
+    border-radius: 0 0 0 20px;
+  }
+  .round-corner-table tr:last-child td:last-child{ /* 最後のtr(行) かつ、最後の td(列) つまり、3行目3列目に適用*/
+    border-radius: 0 0 20px 0;
+  }
+
+
+  .button_line004 a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+}
+.button_line004 a:before,
+.button_line004 a:after {
+	content: '';
+	width: 18px;
+	height: 18px;
+	border-color: #6279f7;
+	box-sizing: border-box;
+	border-style :solid;
+	display: block;
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+.button_line004 a:before {
+	top: -6px;
+	left: -6px;
+	border-width: 2px 0 0 2px;
+	z-index: 5;
+}
+.button_line004 a:after {
+	bottom: -6px;
+	right: -6px;
+	border-width: 0 2px 2px 0;
+}
+.button_line004 a:hover:before,
+.button_line004 a:hover:after {
+	width: calc(100% + 12px);
+	height: calc(100% + 12px);
+	border-color: #6bb6ff;
+}
+.button_line004 a:hover {
+	color: rgb(137, 219, 185);
+	background-color: #5b64e4;
+	border-color: #5b64e4;
+}
+
+.button_solid006 a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 240px;
+  padding: 6px 25px;
+  background: #6bb6ff;
+  color: #FFF;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  border-radius: 100px;
+  box-shadow: 0 5px 0px #4f96f6, 0 10px 100px #4f96f6;
+}
+.button_solid006 a:hover{
+background:#FF2F2F;
+box-shadow: 0 5px 0px #B73434,0 7px 30px #FF2F2F;
+}
+
+.button_solid006 a:active{
+background:#FF8282;
+box-shadow: 0 0px 10px #FF8282;
+box-shadow: 0 5px 0px #CC6262,0 4px 10px #FF8282;
+}
+
+input.button_submit{
+  position: fixed;
+  bottom: 20px; /*追従ボタンのウィンドウ端の余白*/
+  right: 10px;/*追従ボタンの横の位置*/
+  font-size: 22px;
+
+  width:100px;
+  font-size:12px;
+  color:#FFFFFF;
+  text-align:center;
+  display:block;
+  padding:10px 0 10px;
+  background:#6BCBF6;
+  border-radius:5px;
+  box-shadow:1px 1px #1A6EA0;
+}
+
+
+
+

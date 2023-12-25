@@ -1,0 +1,43 @@
+
+<h1>在庫一覧</h1>
+
+
+
+<table border=”1″ align="center" class="round-corner-table">
+<tr bgcolor="navy">
+    <th width="220"><font color="whitesmoke">在庫名</font></th>
+    <th width="70"><font color="whitesmoke">在庫数</font></th>
+    <th><font color="whitesmoke">画像</font></th>
+    <th width="500"><font color="whitesmoke">詳細</font></th>
+    <th width="200"><font color="whitesmoke">編集リンク</font></th>
+</tr>
+<% @stocks.each do |stock| %>
+  <tr>
+  <td><span><%= stock.name %></span></td>
+  <td><span><%= stock.num %></span></td>
+
+  
+  <% if stock.image? %>
+    <td align="center"><%= image_tag stock.image.url %></td>
+  <% else %>
+    <td align="center"><%= image_tag "No_image_1" %></td>
+  <% end %>
+  
+  <td><span><%= stock.detail %></span></td>
+  <td>
+  <div class="button_line004">
+   <%= link_to "編集", stock_path(stock.id) %>
+  </div>
+  </td>
+
+  </tr>
+<% end %>
+</table>
+<br>
+<%= paginate @stocks %>
+<br>
+
+<div class="button_solid006">
+<div class="fixed_btn"><%= link_to "物品追加", new_stock_path %></div>
+</div>
+
